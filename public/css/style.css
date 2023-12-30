@@ -1,0 +1,78 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.bg-custom{
+  background-color: transparent
+}
+
+
+.box {
+margin: auto
+}
+.card {
+padding: 8%;
+padding-top: 35px;
+margin-top: 60px;
+margin-bottom: 80px
+}
+textarea[name="message"] {
+resize: none
+}
+#e-mail {
+height: 45px
+}
+#message {
+height: 120px
+}
+input.input-box,
+textarea.input-box {
+background-color: #616161;
+border: #616161;
+color: #BDBDBD
+}
+input.input-box:focus,
+textarea.input-box:focus {
+background-color: #000000;
+color: #BDBDBD
+}
+.rm-border:focus {
+border-color: inherit;
+-webkit-box-shadow: none;
+box-shadow: none
+}
+form .form-control::-webkit-input-placeholder {
+color: #9E9E9E
+}
+::-moz-placeholder {
+color: #9E9E9E !important
+}
+input.btn-purple {
+background-color: #5C6BC0;
+color: #ffffff
+}
+
+button.btn-purple {
+background-color: #5C6BC0;
+color: #ffffff
+}
+button.btn-purple:hover{
+  background-color: #0a036d;
+  color: #ffffff
+}
+
+
+
+

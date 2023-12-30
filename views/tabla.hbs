@@ -1,0 +1,43 @@
+{{>navbar}}
+<div class="table-responsive mt-5 ">
+  <table class="table mt-5 table-hover">
+    <thead class="table-light">
+   <tr>
+      <th scope="col">Imagen</th>
+      <th scope="col">Producto</th>
+      <th scope="col">Descripción</th>
+     <th scope="col">Precio</th>
+     <th scope="col">Edicion</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tabla}}
+   <tr>
+      <td> 
+        {{#if Foto1.secure_url}}
+        <img src={{Foto1.secure_url}} width="100">
+        {{/if}}
+        {{#if Foto2.secure_url}}
+        <img src={{Foto2.secure_url}} width="100">
+        {{/if}}
+        {{#if Foto3.secure_url}}
+        <img src={{Foto3.secure_url}} width="100">
+        {{/if}}
+        {{#if Foto4.secure_url}}
+        <img src={{Foto4.secure_url}} width="100">
+        {{/if}}
+        </td>
+      <td>{{Producto}}</td>
+      <td>{{Descripcion}}</td>
+     <td>{{Precio}}</td>
+     <td>
+       <a type="button" class="btn btn-warning" href="/productos/modalModificacion/{{_id}}">Editar</a>
+       
+       <a type="button" class="btn btn-danger" href="/productos/eliminarProducto/{{_id}}">Eliminar</a>
+     </td>
+    </tr>
+  </tbody>
+    {{/each}}
+  </table>
+</div>

@@ -1,0 +1,89 @@
+{{>navbar}}
+<div class="bg-light mt-5">
+<div class="container">
+<div class="row justify justify-content-center">
+<div class="col-11 col-md-8 col-lg-6 col-xl-5">
+<form  method="POST" action="/productos/modificarProducto" enctype="multipart/form-data" >
+<div class="card bg-dark">
+
+<div class="form-group row mb-3">
+<div class="col-md-12 mb-0">
+<label class="mb-1 text-white">Nombre del producto:</label> 
+  <input id="e-mail" type="text"  name="Producto" class="form-control rm-border" value="{{produModificar.Producto}}"  autofocus>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-md-12 mb-2">
+<label class="mb-1 text-white">Descripcion</label> 
+<textarea name="Descripcion" class="form-control  rm-border">{{produModificar.Descripcion}}</textarea>
+</div>
+</div>
+<div class="form-group row mb-1">
+
+<label class="mb-1 text-white">Precio:</label> 
+<div class="input-group mb-1">
+  <span class="input-group-text" id="basic-addon1">$</span>
+  <input type="text" class="form-control rm-border"  name="Precio" value="{{produModificar.Precio}}">
+</div>
+</div>
+
+  <div class="form-group row">
+<div class="col-md-12 mb-3">
+<p class="text-white">Clickea sobre la foto para eliminarla</p>
+  
+{{#unless produModificar.Foto1.secure_url }}
+  <p class="text-white mb-0">Debe contener Foto Principal</p>
+  <input type="file"  name="Foto1" class="form-control input-box mt-0  mb-1 rm-border"></input>
+  {{/unless}}
+   
+  <a href="/productos/eliminarFoto1/{{produModificar._id}}"><img src="{{produModificar.Foto1.secure_url
+}}" width="75"></a>
+
+{{#unless produModificar.Foto2.secure_url }}
+  <input type="file"  name="Foto2" class="form-control input-box mt-1  mb-1 rm-border"></input>
+  {{/unless}}  
+
+ <a href="/productos/eliminarFoto2/{{produModificar._id}}"><img src="{{produModificar.Foto2.secure_url
+}}" width="75"></a>  
+
+{{#unless produModificar.Foto3.secure_url }}
+  <input type="file"  name="Foto3" class="form-control input-box mt-1  mb-1 rm-border"></input>
+  {{/unless}}    
+
+<a href="/productos/eliminarFoto3/{{produModificar._id}}"><img src="{{produModificar.Foto3.secure_url
+}}" width="75"></a>  
+
+{{#unless produModificar.Foto4.secure_url }}
+  <input type="file"  name="Foto4" class="form-control input-box mt-1  mb-1 rm-border"></input>
+  {{/unless}} 
+  
+<a href="/productos/eliminarFoto4/{{produModificar._id}}"><img src="{{produModificar.Foto4.secure_url
+}}" width="75"></a>  
+
+</div>
+</div>
+
+  <div class="form-group row justify-content-center mb-0">
+          <button type="submit" class="btn btn-warning rm-border btn-block btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" >Modificar Producto</button>
+</div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+</div> 
+
+{{#if nc}}
+<script>
+
+  Swal.fire({
+  title: 'No se han cargado las modificaciones',
+  text: 'Por algun error de servidor las modificaciones no se cargaron',
+  icon: 'error',
+  confirmButtonText: 'Ok'
+})
+
+  
+</script>
+{{/if}}

@@ -1,0 +1,81 @@
+{{>navbar}}
+<div class="bg-light mt-5">
+<div class="container">
+<div class="row justify justify-content-center">
+<div class="col-11 col-md-8 col-lg-6 col-xl-5">
+<form  method="POST" action="/productos/cargar" enctype="multipart/form-data" >
+<div class="card bg-dark">
+<div class="row mt-0">
+<div class="col-md-12 ">
+<h4 class="text-white">Carga tu nuevo producto</h4>
+<p class="text-white">Ten en cuenta que todos los campos son requeridos</p>
+</div>
+</div>
+<div class="form-group row mb-3">
+<div class="col-md-12 mb-0">
+<label class="mb-1 text-white">Nombre del producto:</label> 
+  <input id="e-mail" type="text" placeholder="¿Como se llama tu nuevo producto?" name="Producto" class="form-control input-box rm-border" autofocus>
+</div>
+</div>
+<div class="form-group row">
+<div class="col-md-12 mb-2">
+<label class="mb-1 text-white">Descripcion</label> 
+<textarea   placeholder="Describe tu producto" name="Descripcion" class="form-control input-box rm-border"></textarea>
+</div>
+</div>
+<div class="form-group row mb-1">
+
+<label class="mb-1 text-white">Precio:</label> 
+<div class="input-group mb-1">
+  <span class="input-group-text" id="basic-addon1">$</span>
+  <input type="text" class="form-control input-box rm-border" placeholder="Precio" name="Precio">
+</div>
+</div>
+
+  <div class="form-group row">
+<div class="col-md-12 mb-3">
+<label class="mb-1 text-white">Fotos</label> <input type="file" placeholder="Describe tu producto" name="Foto1" class="form-control input-box rm-border"></input>
+<input type="file" placeholder="Describe tu producto" name="Foto2" class="form-control input-box mt-2 rm-border"></input>
+<input type="file" placeholder="Describe tu producto" name="Foto3" class="form-control input-box mt-2 rm-border"></input>
+<input type="file" placeholder="Describe tu producto" name="Foto4" class="form-control input-box mt-2 rm-border"></input>
+</div>
+</div>
+
+  <div class="form-group row justify-content-center mb-0">
+          <button type="submit" class="btn btn-purple rm-border btn-block btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;" >Cargar producto</button>
+</div>
+
+</div>
+</form>
+</div>
+</div>
+</div>
+</div> 
+{{#if ok}}
+<script>
+
+  Swal.fire({
+  title: 'Producto cargado correctamente',
+  text: 'Producto ya en linea',
+  icon: 'success',
+  confirmButtonText: 'Ok'
+})
+
+  
+</script>
+{{/if}}
+
+{{#if nc}}
+<script>
+
+  Swal.fire({
+  title: 'Producto no se cargo',
+  text: 'Por algun error de servidor el producto no se cargo',
+  icon: 'error',
+  confirmButtonText: 'Ok'
+})
+
+  
+</script>
+{{/if}}
